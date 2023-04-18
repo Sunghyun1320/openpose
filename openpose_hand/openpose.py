@@ -7,8 +7,8 @@ HAND_PAIR = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [5, 6], [6, 7], [7, 8], [0,
              ]
     
 # 각 파일 path
-protoFile = "pose_deploy.prototxt"
-weightsFile = "pose_iter_102000.caffemodel"
+protoFile = "..//openpose//models//hand//pose_deploy.prototxt"
+weightsFile = "..//openpose//models//hand//pose_iter_102000.caffemodel"
  
 # 위의 path에 있는 network 불러오기
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)

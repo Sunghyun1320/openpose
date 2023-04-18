@@ -21,14 +21,15 @@ POSE_PAIRS = [ ["Head", "Neck"], ["Neck", "RShoulder"], ["RShoulder", "RElbow"],
                 ["RKnee", "RAnkle"], ["Chest", "LHip"], ["LHip", "LKnee"], ["LKnee", "LAnkle"] ]
     
 # 각 파일 path
-protoFile = "pose_deploy_linevec_faster_4_stages.prototxt"
-weightsFile = "pose_iter_160000.caffemodel"
+# protoFile = "pose_deploy_linevec_faster_4_stages.prototxt"
+protoFile = "..//openpose//models//pose//mpi//pose_deploy_linevec_faster_4_stages.prototxt"
+weightsFile = "..//openpose//models//pose//mpi//pose_iter_160000.caffemodel"
  
 # 위의 path에 있는 network 불러오기
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 
 # 이미지 읽어오기
-image = cv2.imread("image//running.jpg")
+image = cv2.imread("image//tennis.jpg")
 # image = cv2.resize(image,(640,600))
 # image = cv2.resize(image, (0,0), fx = 0.2, fy=0.2)
 
@@ -74,7 +75,7 @@ for i in range(0,15):
         points.append(None)
 
 cv2.imshow("Output-Keypoints_1",image)
-cv2.waitKey(0)
+# cv2.waitKey(0)
 
 # 이미지 복사
 imageCopy = image
